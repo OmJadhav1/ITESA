@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import Button from "../utils/Button/Button";
 import logo from "../utils/Logo/DARK_MODE-LOGO.png";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross2 } from "react-icons/rx";
+import { ImCross } from "react-icons/im";
 // import { toast } from "material-react-toastify";
 import "../Navbar/Dropdown/Dropdown.css";
 import "./Navbar.css";
@@ -50,7 +50,7 @@ const Navbar = () => {
             </div>
           </NavLink>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <RxCross2 /> : <GiHamburgerMenu />}
+            {click ? <ImCross style={{ fill: 'white' }}/> : <GiHamburgerMenu style={{ fill: 'white' }}/>}
           </div>
           <ul
             className={click ? "nav-menu active" : "nav-menu"}
@@ -103,11 +103,19 @@ const Navbar = () => {
                       </NavLink>
                       <NavLink
                         activeClassName="active-links"
-                        to="/past-teams"
+                        to="/sports-team"
                         onClick={closeMobileMenu}
                       >
-                        Past Team
+                        Sports
                       </NavLink>
+                      <NavLink
+                        activeClassName="active-links"
+                        to="/public_relations-team"
+                        onClick={closeMobileMenu}
+                      >
+                        Public-Relations
+                      </NavLink>
+
                     </div>
                   </Button>
                 </div>

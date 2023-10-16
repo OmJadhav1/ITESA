@@ -1,6 +1,6 @@
 import React from "react";
 //react-router-dom
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //components
 // import Technical from "./components/Teams/Technical/Technical";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,7 +14,7 @@ import Footer from "./components/Footer/Footer";
 // import Contact from "./components/Pages/Contact-Us/Contact";
 // import Events from "./components/Pages/Events/Events";
 // //utils
-// import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
+import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
 import ScrollToTop from "./components/utils/ScrollToTop/ScrollToTop";
 // import { ToastContainer } from "material-react-toastify";
 import "./App.css";
@@ -27,9 +27,10 @@ const App = () => {
           {/* <ToastContainer position="top-right" /> */}
         </div>
         <Navbar />
-        {/* <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch> */}
+        <Routes>
+          {/* <Route exact path="/" element={<Home />} /> */}
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
         <ScrollToTop />
         <Footer />
       </Router>

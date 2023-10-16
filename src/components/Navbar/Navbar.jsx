@@ -50,7 +50,11 @@ const Navbar = () => {
             </div>
           </NavLink>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <ImCross style={{ fill: 'white' }}/> : <GiHamburgerMenu style={{ fill: 'white' }}/>}
+            {click ? (
+              <ImCross style={{ fill: "white" }} />
+            ) : (
+              <GiHamburgerMenu style={{ fill: "white" }} />
+            )}
           </div>
           <ul
             className={click ? "nav-menu active" : "nav-menu"}
@@ -58,11 +62,12 @@ const Navbar = () => {
           >
             <li className="nav-item active">
               <NavLink
-                activeClassName="active-links"
+                className={({ isActive }) =>
+                  isActive ? "active-links nav-links" : "nav-links"
+                }
                 to="/"
-                className="nav-links"
                 onClick={closeMobileMenu}
-                exact={true}
+                exact="true"
               >
                 Home
               </NavLink>
@@ -74,48 +79,47 @@ const Navbar = () => {
                     Team <i className="fas fa-caret-down" />
                     <div className="dropdown-content">
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/technical-team"
                         onClick={closeMobileMenu}
                       >
                         Technical
                       </NavLink>
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/management-team"
                         onClick={closeMobileMenu}
                       >
                         Management
                       </NavLink>
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/cultural-team"
                         onClick={closeMobileMenu}
                       >
                         Cultural
                       </NavLink>
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/design-team"
                         onClick={closeMobileMenu}
                       >
                         Design
                       </NavLink>
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/sports-team"
                         onClick={closeMobileMenu}
                       >
                         Sports
                       </NavLink>
                       <NavLink
-                        activeClassName="active-links"
+                        className="active-links"
                         to="/public_relations-team"
                         onClick={closeMobileMenu}
                       >
                         Public-Relations
                       </NavLink>
-
                     </div>
                   </Button>
                 </div>
@@ -123,9 +127,10 @@ const Navbar = () => {
             </li>
             <li className="nav-item active">
               <NavLink
-                activeClassName="active-links"
+                className={({ isActive }) =>
+                  isActive ? "active-links nav-links" : "nav-links"
+                }
                 to="/events"
-                className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Events <span className="badge badge-warning">new</span>
@@ -133,67 +138,15 @@ const Navbar = () => {
             </li>
             <li className="nav-item active">
               <NavLink
-                activeClassName="active-links"
+                className={({ isActive }) =>
+                  isActive ? "active-links nav-links" : "nav-links"
+                }
                 to="/contact-us"
-                className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Contact
               </NavLink>
             </li>
-            {/* {isAuthenticated() && isAuthenticated().role === 0 && (
-              <li className="nav-item active">
-                <NavLink
-                  to="/unapproved/dashboard"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  <span className="badge badge-admin">Dashboard</span>
-                </NavLink>
-              </li>
-            )}
-            {isAuthenticated() && isAuthenticated().role === 1 && (
-              <li className="nav-item active">
-                <NavLink
-                  to="/admin/dashboard"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  <span className="badge badge-admin">Admin Dashboard</span>
-                </NavLink>
-              </li>
-            )}
-            {isAuthenticated() ? (
-              ""
-            ) : (
-              <>
-                <li className="nav-item active">
-                  <NavLink
-                    to="/admin/sign-in"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    <span className="badge badge-admin">admin ?</span>
-                  </NavLink>
-                </li>
-              </>
-            )}
-            {isAuthenticated() && (
-              <li
-                style={{ cursor: "pointer" }}
-                className="nav-item active"
-                onClick={() => {
-                  signout(() => {
-                    // localStorage.removeItem("user");
-                    history.push("/");
-                    toast.warning("Signout Successfully!");
-                  });
-                }}
-              >
-                <span className="badge badge-admin">Signout</span>
-              </li>
-            )} */}
-
             <li className="nav-item active">
               <a
                 href="https://github.com/OmJadhav1/ITESA"

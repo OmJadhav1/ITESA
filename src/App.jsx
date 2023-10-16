@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+//react-router-dom
+import { BrowserRouter as Router, Route } from "react-router-dom";
+//components
+// import Technical from "./components/Teams/Technical/Technical";
+import Navbar from "./components/Navbar/Navbar";
+// import Footer from "./components/Footer/Footer";
+// import Management from "./components/Teams/Management/Management";
+// import Cultural from "./components/Teams/Cultural/Cultural";
+// import Design from "./components/Teams/Design/Design";
+// import PastTeams from "./components/Teams/PastTeams/PastTeams";
+//pages
+// import Home from "./components/Pages/Home/Home";
+// import Contact from "./components/Pages/Contact-Us/Contact";
+// import Events from "./components/Pages/Events/Events";
+// //utils
+// import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
+import ScrollToTop from "./components/utils/ScrollToTop/ScrollToTop";
+// import { ToastContainer } from "material-react-toastify";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Router>
+        <div className="toast">
+          {/* <ToastContainer position="top-right" /> */}
+        </div>
+        <Navbar />
+        {/* <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch> */}
+        <ScrollToTop />
+        {/* <Footer /> */}
+      </Router>
     </>
-  )
-}
+  );
+};
 
-export default App
+//Backend-testing on heroku :)
+
+export default App;

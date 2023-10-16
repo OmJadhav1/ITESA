@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 //components
 // import Technical from "./components/Teams/Technical/Technical";
 import Navbar from "./components/Navbar/Navbar";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 // import Management from "./components/Teams/Management/Management";
 // import Cultural from "./components/Teams/Cultural/Cultural";
 // import Design from "./components/Teams/Design/Design";
@@ -31,7 +31,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
         </Switch> */}
         <ScrollToTop />
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   );

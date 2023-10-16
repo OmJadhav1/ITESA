@@ -51,16 +51,18 @@ const Footer = () => {
                 <Link to="/cultural-team">Cultural Team</Link>
               </li>
               <li>
-                <Link to="/design-team">Design-team</Link>
+                <Link to="/design-team">Design Team</Link>
               </li>
               <li>
-                <Link to="/public-relation-team">Public-Relation-team</Link>
+                <Link to="/public-relation-team">Public-Relation Team</Link>
               </li>
               <li>
-                <Link to="/sports-team">Sports-team</Link>
+                <Link to="/sports-team">Sports Team</Link>
               </li>
               <li>
-                <Link to="/video-team">Video Team</Link>
+                <Link to="/Photography-Videography team">
+                  Photography / Videography Team
+                </Link>
               </li>
             </ul>
           </li>
@@ -102,7 +104,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:itesa.dyp@gmail.com"
+                    href="mailto:itesaofficial01@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
